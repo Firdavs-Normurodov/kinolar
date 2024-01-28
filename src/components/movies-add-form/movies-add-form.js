@@ -40,6 +40,7 @@ class MoviesAddForm extends Component {
             onChange={this.changeHandlerInput}
             name="name"
             value={name}
+            required
             // required
           />
           <input
@@ -49,6 +50,7 @@ class MoviesAddForm extends Component {
             onChange={this.changeHandlerInput}
             name="views"
             value={views}
+            required
             // required
           />
 
