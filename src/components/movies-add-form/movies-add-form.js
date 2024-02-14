@@ -2,16 +2,17 @@ import { useState } from 'react'
 import './movies-add-form.css'
 
 const MoviesAddForm = ({ addForm }) => {
-	const [state, setState] = useState({ name: '', views: '' })
+  const [state, setState] = useState({ name: '', views: '' })
 
-	const changeHandlerInput = e => setState({ ...state, [e.target.name]: e.target.value })
+  const changeHandlerInput = e => setState({ ...state, [e.target.name]: e.target.value })
 
-	const addFormHandler = e => {
-		e.preventDefault()
-		const data = { name: state.name, viewers: state.views }
-		addForm(data)
-		setState({ name: '', views: '' })
-	}
+  const addFormHandler = e => {
+    e.preventDefault()
+    if (state.name===""|| state.views==="") return
+    const data = { name: state.name, viewers: state.views }
+    addForm(data)
+    setState({ name: '', views: '' })
+  }
   return (
     <div className="app-add-form">
       <h3>Yangi kino qo'shish</h3>
@@ -26,7 +27,7 @@ const MoviesAddForm = ({ addForm }) => {
           onChange={changeHandlerInput}
           name="name"
           value={state.name}
-          required
+          // required
         />
         <input
           type="number"
@@ -35,9 +36,9 @@ const MoviesAddForm = ({ addForm }) => {
           onChange={changeHandlerInput}
           name="views"
           value={state.views}
-          required
+          // required
         />
-  
+
         <button type="submit" className="btn btn-outline-dark">
           Qo'shish
         </button>

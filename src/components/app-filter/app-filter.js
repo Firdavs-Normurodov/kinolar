@@ -7,7 +7,7 @@ const AppFilter = ({ updateFilterHandler, filter }) => {
         <button
           onClick={() => updateFilterHandler(btn.name)}
           key={btn.name}
-          className={`btn ${filter == btn.name ? 'btn-dark':'btn-outline-dark'}`}
+          className={`btn ${filter === btn.name ? 'btn-dark':'btn-outline-dark'}`}
           type="button"
         >
           {btn.label}
